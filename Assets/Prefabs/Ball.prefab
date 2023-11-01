@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 440704526876528591}
   - component: {fileID: 1690882227620945032}
   - component: {fileID: 953457928299210032}
-  - component: {fileID: 727056035037831690}
   - component: {fileID: 5453869347151794533}
+  - component: {fileID: 8869130018897727029}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 30b0ade291e0a6f49ba24baabfd57698, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb2dd9af69c49f64c86b84e62c59ffa2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1
+  m_Mass: 0.23281871
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -114,8 +114,23 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!58 &727056035037831690
-CircleCollider2D:
+--- !u!114 &5453869347151794533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7262790571829216997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5325cb5ce835d6344b905f06c1777d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
+  _objects: {fileID: 11400000, guid: 791e128d50e74e545acbf25eac753377, type: 2}
+  _mergeParticlesPrefab: {fileID: 8334612509446014874, guid: bd19533bedd9d394497da02e0e9e64ce, type: 3}
+--- !u!60 &8869130018897727029
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,20 +162,35 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.27
---- !u!114 &5453869347151794533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7262790571829216997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5325cb5ce835d6344b905f06c1777d2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 1
-  _objects: {fileID: 11400000, guid: 791e128d50e74e545acbf25eac753377, type: 2}
-  _mergeParticlesPrefab: {fileID: 8334612509446014874, guid: bd19533bedd9d394497da02e0e9e64ce, type: 3}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.52, y: 0.52}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.056780823, y: 0.26166862}
+      - {x: -0.027731068, y: 0.23234767}
+      - {x: -0.09998821, y: 0.22497047}
+      - {x: -0.17551447, y: 0.20186101}
+      - {x: -0.20994097, y: 0.15668635}
+      - {x: -0.24643601, y: 0.11559772}
+      - {x: -0.26286632, y: 0.076868765}
+      - {x: -0.25961554, y: -0.10805431}
+      - {x: -0.1802213, y: -0.1996842}
+      - {x: -0.17367211, y: -0.224106}
+      - {x: -0.14938632, y: -0.25821793}
+      - {x: 0.1316332, y: -0.25833136}
+      - {x: 0.22329003, y: -0.18494685}
+      - {x: 0.24848256, y: -0.13455151}
+      - {x: 0.25116703, y: -0.0072205923}
+      - {x: 0.21165958, y: 0.07461944}
+      - {x: 0.2506261, y: 0.07809899}
+      - {x: 0.26436213, y: 0.104210615}
+      - {x: 0.26, y: 0.22}
+      - {x: 0.22342765, y: 0.2590611}
+  m_UseDelaunayMesh: 0
