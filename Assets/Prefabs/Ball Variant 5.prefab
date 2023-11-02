@@ -106,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7262790571829216997, guid: 035f049346a148445a6be4fc2345c81c, type: 3}
       propertyPath: m_Name
-      value: Ball Variant 6
+      value: Ball Variant 5
       objectReference: {fileID: 0}
     - target: {fileID: 8869130018897727029, guid: 035f049346a148445a6be4fc2345c81c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

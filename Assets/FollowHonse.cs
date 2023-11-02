@@ -18,4 +18,4 @@ public class FollowHonse : MonoBehaviour
     {
         transform.position = _honse.position + _offset;
     }
-}
+} 
