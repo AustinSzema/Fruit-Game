@@ -37,6 +37,11 @@ public class SpawnBall : MonoBehaviour
 
     private bool _growBall = true;
 
+
+    private int _ballCount = 0;
+    
+    [SerializeField] private int _blendWaitCount = 20;
+
     private void Start()
     {
         _balls = _objects.objects;
@@ -127,6 +132,12 @@ public class SpawnBall : MonoBehaviour
             _growBall = true;
             _spawnSprite.enabled = false;
 
+            _ballCount++;
+            if(_ballCount % _blendWaitCount == 0)
+            {
+
+            }
+
         }
     }
 
@@ -134,6 +145,12 @@ public class SpawnBall : MonoBehaviour
     {
         // Instantiates a ball here
         return Instantiate(_balls[Random.Range(0, Mathf.FloorToInt(_balls.Length / 2))], _spawnPos.position, Quaternion.identity);
+    }
+
+
+    private void BlendFruit()
+    {
+
     }
 }
 
