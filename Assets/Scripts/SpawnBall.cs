@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class SpawnBall : MonoBehaviour
@@ -88,14 +84,14 @@ public class SpawnBall : MonoBehaviour
             _time -= Time.deltaTime;
         }
 
-
+        Debug.Log(_growBall);
 
         if (_growBall)
         {
             _spawnPos.localScale += new Vector3(Time.deltaTime, Time.deltaTime, Time.deltaTime);
         }
 
-        if (Vector3.Distance(_spawnPos.localScale, _originalSize) <= 0.05f)
+        if (Vector3.Distance(_spawnPos.localScale, _originalSize) <= 0.1f)
         {
             _spawnPos.localScale = _originalSize;
             _growBall = false;
