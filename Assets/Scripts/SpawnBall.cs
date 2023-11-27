@@ -84,7 +84,7 @@ public class SpawnBall : MonoBehaviour
             _time -= Time.deltaTime;
         }
 
-        Debug.Log(_growBall);
+        Debug.Log("Grow Ball: " + _growBall);
 
         if (_growBall)
         {
