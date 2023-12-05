@@ -2518,7 +2518,7 @@ MonoBehaviour:
   _spawnPos: {fileID: 473793326}
   _queuedBallImage: {fileID: 335523449}
   _camera: {fileID: 519420031}
-  _honse: {fileID: 0}
+  _honse: {fileID: 78271430}
 --- !u!4 &1802746045
 Transform:
   m_ObjectHideFlags: 0
