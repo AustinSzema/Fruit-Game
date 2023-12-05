@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GenerateSound : MonoBehaviour
 {
@@ -9,39 +10,49 @@ public class GenerateSound : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
 
     private AudioClip _clip;
+
+    [SerializeField] private Honse _honse;
     
     // Start is called before the first frame update
     void Start()
     {
-        _clip = GenerateAudioClip();
+        int sampleRate = 44100; // The number of samples per second
+        float frequency = 440f; // Frequency of the sine wave in Hertz
+        float duration = 2f;    // Duration of the audio clip in seconds
+
+        _clip = CreateSineWave(sampleRate, frequency, duration);
         _audioSource.clip = _clip;
         _audioSource.loop = true;
-        
-        float[] _samples = new float[_clip.samples * _clip.channels];
-        _clip.GetData(_samples, 0);
+    }
 
-        for (int i = 0; i < _samples.Length; ++i)
+    AudioClip CreateSineWave(int sampleRate, float frequency, float duration)
+    {
+        int numSamples = (int)(sampleRate * duration);
+        float[] samples = new float[numSamples];
+
+        for (int i = 0; i < numSamples; i++)
         {
-            _samples[i] = _samples[i] * 0.5f;
+            float t = i / (float)sampleRate;
+            samples[i] = Mathf.Sin(2 * Mathf.PI * frequency * t);
         }
 
-        _clip.SetData(_samples, 0);
-        
-        _audioSource.Play();
+        AudioClip generatedAudioClip = AudioClip.Create("GeneratedClip", numSamples, 1, sampleRate, false);
+        generatedAudioClip.SetData(samples, 0);
+
+        return generatedAudioClip;
     }
+
 
     private void Update()
     {
-        Debug.Log("Audio source is playing: " +_audioSource.isPlaying);
-        
-    }
-
-
-    private AudioClip GenerateAudioClip()
-    {
-        AudioClip _clip = AudioClip.Create("New Clip", 10, 2, 10000, false);
-        
-        return _clip;
-        
+        if (_honse._moveHonse)
+        {
+            _audioSource.Play();
+            _audioSource.pitch = Random.Range(-3, 3);
+        }
+        else
+        {
+            _audioSource.Stop();
+        }
     }
 }
