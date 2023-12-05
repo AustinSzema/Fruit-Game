@@ -39,6 +39,8 @@ public class SpawnBall : MonoBehaviour
     public int _blendWaitCount {get; private set;} = 12;
 
 
+    [SerializeField] private Honse _honse;
+    
     private void Start()
     {
         _balls = _objects.objects;
@@ -109,7 +111,7 @@ public class SpawnBall : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonDown(0) && _time <= 0f && _growBall == false) // Check for left mouse button click
+        if (Input.GetMouseButtonDown(0) && _time <= 0f && _growBall == false && _honse._moveHonse == false) // Check for left mouse button click
         {
 
             _nextBall.SetActive(true);
