@@ -34,9 +34,10 @@ public class SpawnBall : MonoBehaviour
     private bool _growBall = true;
 
 
-    private int _ballCount = 0;
+    public int _ballCount { get; private set; } = 0;
     
-    [SerializeField] private int _blendWaitCount = 20;
+    public int _blendWaitCount {get; private set;} = 12;
+
 
     private void Start()
     {
@@ -129,10 +130,6 @@ public class SpawnBall : MonoBehaviour
             _spawnSprite.enabled = false;
 
             _ballCount++;
-            if(_ballCount % _blendWaitCount == 0)
-            {
-
-            }
 
         }
     }
