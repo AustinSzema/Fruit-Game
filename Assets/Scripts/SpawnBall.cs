@@ -36,7 +36,7 @@ public class SpawnBall : MonoBehaviour
 
     public int _ballCount { get; private set; } = 0;
     
-    public int _blendWaitCount {get; private set;} = 12;
+    public int _blendWaitCount {get; private set;} = 50;
 
 
     [SerializeField] private Honse _honse;
